@@ -16,7 +16,8 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		// Do the magic
+		let idProducto = products.filter (producto => producto.id == req.params.id)
+		res.render('detail',{idProducto:idProducto[0]})
 	},
 
 	// Create - Form to create
