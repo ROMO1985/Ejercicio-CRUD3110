@@ -22,17 +22,21 @@ const controller = {
 
 	// Create - Form to create
 	create: (req, res) => {
-		// Do the magic
+		
+		res.render('product-create-form')
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		// Do the magic
+		let nuevoProducto= req.body
+		res.send (nuevoProducto)
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+
+		let idProducto = products.filter (producto => producto.id == req.params.id);
+		res.render('product-edit-form',{ idProducto: idProducto[0]});
 	},
 	// Update - Method to update
 	update: (req, res) => {
