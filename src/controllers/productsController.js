@@ -17,7 +17,8 @@ const controller = {
 	// Detail - Detail from one product
 	detail: (req, res) => {
 		let idProducto = products.filter (producto => producto.id == req.params.id)
-		res.render('detail',{idProducto:idProducto[0]})
+		res.render('detail', {idProducto:idProducto[0]})
+		
 	},
 
 	// Create - Form to create
@@ -40,7 +41,7 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+		res.send(req.body)
 	},
 
 	// Delete - Delete one product from DB
