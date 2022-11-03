@@ -46,7 +46,9 @@ const controller = {
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		// Do the magic
+		
+		let elementoEliminado = products.find(pt => pt.id == req.params.id)
+		res.send ('PRODUCTO ELIMINADO: ID-'+ elementoEliminado.id+' - nombre: '+ elementoEliminado.name)
 	}
 };
 
